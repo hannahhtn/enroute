@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/enroute/static/css/main.964fdded.css",
+    "main.js": "/enroute/static/js/main.68cc1543.js",
+    "static/js/787.126f1d82.chunk.js": "/enroute/static/js/787.126f1d82.chunk.js",
+    "index.html": "/enroute/index.html",
+    "main.964fdded.css.map": "/enroute/static/css/main.964fdded.css.map",
+    "main.68cc1543.js.map": "/enroute/static/js/main.68cc1543.js.map",
+    "787.126f1d82.chunk.js.map": "/enroute/static/js/787.126f1d82.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.964fdded.css",
+    "static/js/main.68cc1543.js"
+  ]
+}
