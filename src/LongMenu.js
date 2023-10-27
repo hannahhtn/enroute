@@ -37,7 +37,7 @@ const LongMenu = () => {
         aria-expanded={open ? "true" : undefined}
         aria-haspopup="true"
         onClick={handleClick}
-        sx={{p:2}}
+        sx={{px:2}}
       >
         <MenuIcon sx={{ fontSize: 50}} />
       </IconButton>

@@ -10,7 +10,7 @@ const Location = () => {
     }
 
     return (
-      <Stack direction="row" alignItems="center" gap="0.5rem" sx={{ p: 2 }}>
+      <Stack direction="row" alignItems="center" gap="0.5rem" sx={{ px: 2 }}>
         <PlaceIcon sx={{ color: "#FF1616" }}></PlaceIcon>
         <Typography onClick={handleClick}>{location}</Typography>
       </Stack>
