@@ -50,13 +50,12 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           color: "black",
-          borderRadius: 15,       
+          borderRadius: 15,
         },
       },
     },
   },
 });
-
 
 function App() {
   return (
@@ -80,10 +79,20 @@ function App() {
           <ListMapToggle />
           <Date />
         </Stack>
-         {/* TODO: Generate event info to send to CarouselSlide? */}
-        <EventCarousel title={"Popular In Your Area"} />
-        <EventCarousel title={"Recommended Events"} />
-        <EventCarousel title={"Top 10 in the US"} />
+        {/* TODO: Generate event info to send to CarouselSlide? */}
+        <EventCarousel
+          title={"Popular music events in the US"}
+          resource={"events"}
+          filter={{
+            classificationName: "music",
+            size: "10",
+            countryCode: "us",
+            sort: "date,asc",
+            startDateTime: "2023-10-31T17:00:00Z",  //TODO: update this to dynamic value
+          }}
+        />
+        {/* <EventCarousel title={"Recommended Events"} /> */}
+        {/* <EventCarousel title={"Top 10 in the US"} /> */}
       </Stack>
     </ThemeProvider>
   );
