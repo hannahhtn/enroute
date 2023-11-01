@@ -33,29 +33,28 @@ function CarouselSlide({ resource, filter }) {
   }, [resource, filter]);
   if (!loading) {
     return (
-      !loading && (
-        <Backdrop
-          sx={{ color: "#fff", zIndex: (theme) => 0 }}
-          open={open}
-          onClick={handleClose}
-        >
-          <CircularProgress color="inherit" />
-        </Backdrop>
-      )
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => 0 }}
+        open={open}
+        onClick={handleClose}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     );
   }
 
   return (
     <Carousel
+      preventMovementUntilSwipeScrollTolerance={true}
       showIndicators={false}
       showThumbs={false}
       showStatus={false}
       showArrows={true}
       autoPlay={false}
       emulateTouch={true}
-      transitionTime={"500"}
+      transitionTime={"800"}
       infiniteLoop={false}
-      swipeScrollTolerance={5}
+      swipeScrollTolerance={8}
       width={"100%"}
     >
       {items.map((item, i) => (
@@ -73,6 +72,7 @@ function Item({ item }) {
     setDeviceWidth(window.innerWidth);
   });
   useEffect(() => {
+    // eslint-disable-next-line
     image = item.images.find((i) => i.width > deviceWidth);
     setUrl(image.url);
   }, [deviceWidth]);
@@ -96,7 +96,12 @@ function Item({ item }) {
           {item.name}
         </Typography>
         <Typography variant="subtitle2" align="left">
-          {`${item._embedded.venues[0].city.name} ${item._embedded.venues[0].state.stateCode}`}
+          {`${
+            item._embedded.venues[0].city === undefined
+              ? ""
+              : item._embedded.venues[0].city.name
+          } ${item._embedded.venues[0].state.stateCode}`}
+          {/* some api responses dont have city name*/}
         </Typography>
       </Box>
     </Stack>
