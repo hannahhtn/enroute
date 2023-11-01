@@ -33,6 +33,9 @@ const theme = createTheme({
     black: {
       main: "#000000",
     },
+    grey: {
+      main: "#696969",
+    },
   },
   typography: {
     fontFamily: "Lora",
