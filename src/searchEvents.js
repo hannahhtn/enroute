@@ -16,7 +16,7 @@ export const searchEvent = async (entity, filter) => {
 
   try {
     const res = await fetch(
-      `https://app.ticketmaster.com/discovery/v2/${entity}.json?apikey=${apiKey}${filterList}`
+      `https://app.ticketmaster.com/discovery/v2/${entity}?apikey=${apiKey}${filterList}`
     );
     if (!res.ok) {
       // handle error in the response

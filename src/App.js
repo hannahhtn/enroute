@@ -88,11 +88,21 @@ function App() {
             size: "10",
             countryCode: "us",
             sort: "date,asc",
-            startDateTime: "2023-10-31T17:00:00Z",  //TODO: update this to dynamic value
+            startDateTime: "2023-10-31T17:00:00Z", //TODO: update this to dynamic value
           }}
         />
-        {/* <EventCarousel title={"Recommended Events"} /> */}
-        {/* <EventCarousel title={"Top 10 in the US"} /> */}
+        <EventCarousel
+          title={"Upcoming art events in Seattle"}
+          resource={"events"}
+          filter={{
+            keyword: "art",
+            size: "10",
+            countryCode: "us",
+            city: "seattle",
+            sort: "date,asc",
+            startDateTime: "2023-11-01T17:00:00Z", //TODO: update this to dynamic value
+          }}
+        />
       </Stack>
     </ThemeProvider>
   );

@@ -24,13 +24,13 @@ function CarouselSlide({ resource, filter }) {
   useEffect(() => {
     const fetchEven = async () => {
       const res = await searchEvent(resource, filter);
-      setItems(res.events);
+      setItems(res[resource]);
       setLoading(true);
-      console.log(res.events);
+      // console.log(res[resource]);
     };
 
     fetchEven();
-  }, []);
+  }, [resource, filter]);
   if (!loading) {
     return (
       !loading && (
@@ -66,10 +66,21 @@ function CarouselSlide({ resource, filter }) {
 }
 
 function Item({ item }) {
+  const [deviceWidth, setDeviceWidth] = useState(window.innerWidth);
+  let image = item.images.find((i) => i.width > deviceWidth);
+  const [url, setUrl] = useState(image.url);
+  window.addEventListener("resize", () => {
+    setDeviceWidth(window.innerWidth);
+  });
+  useEffect(() => {
+    image = item.images.find((i) => i.width > deviceWidth);
+    setUrl(image.url);
+  }, [deviceWidth]);
+
   return (
     <Stack display="flex" direction="column" gap="0.5rem">
       <img
-        src={item.images[0].url}
+        src={url} // TODO: update appropriate image size for current device
         style={{
           borderRadius: "1rem",
           height: "30vh",
