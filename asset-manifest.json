@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/enroute/static/css/main.2e6467c4.css",
-    "main.js": "/enroute/static/js/main.fa9e9fe6.js",
+    "main.js": "/enroute/static/js/main.a6973388.js",
     "static/js/787.8e46966f.chunk.js": "/enroute/static/js/787.8e46966f.chunk.js",
     "index.html": "/enroute/index.html",
     "main.2e6467c4.css.map": "/enroute/static/css/main.2e6467c4.css.map",
-    "main.fa9e9fe6.js.map": "/enroute/static/js/main.fa9e9fe6.js.map",
+    "main.a6973388.js.map": "/enroute/static/js/main.a6973388.js.map",
     "787.8e46966f.chunk.js.map": "/enroute/static/js/787.8e46966f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2e6467c4.css",
-    "static/js/main.fa9e9fe6.js"
+    "static/js/main.a6973388.js"
   ]
 }
