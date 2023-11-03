@@ -5,7 +5,8 @@ import InputAdornment from "@mui/material/InputAdornment";
 // import { createTheme, ThemeProvider, useTheme } from "@mui/material/styles";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import IconButton from "@mui/material/IconButton";
-import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+// import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+import BackspaceIcon from "@mui/icons-material/Backspace";
 import { useState } from "react";
 
 const SearchBar = () => {
@@ -38,7 +39,7 @@ const SearchBar = () => {
               edge="end"
             >
               {/* // {showPassword ? <VisibilityOff /> : <Visibility />} */}
-              <HighlightOffIcon color="grey" />
+              <BackspaceIcon color="grey" />
             </IconButton>
           </InputAdornment>
         ),

@@ -8,7 +8,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import NavBar from "./NavBar";
 import SearchBar from "./SearchBar";
 import ListMapToggle from "./ListMapToggle";
-import Date from "./Date";
+import Calendar from "./Calendar";
 import EventCarousel from "./EventCarousel";
 
 // TODO: move this theme to its own file?
@@ -61,6 +61,12 @@ const theme = createTheme({
 });
 
 function App() {
+  let currentDay = new Date();
+  currentDay.setMilliseconds(0);
+
+  // replace .000Z with Z so the todayString format will be accepted when using TM API
+  const todayString = currentDay.toISOString().replace(".000Z", "Z");
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -80,7 +86,7 @@ function App() {
           sx={{ px: 2 }}
         >
           <ListMapToggle />
-          <Date />
+          <Calendar />
         </Stack>
         {/* TODO: Generate event info to send to CarouselSlide? */}
         <EventCarousel
@@ -91,7 +97,7 @@ function App() {
             size: "10",
             countryCode: "us",
             sort: "date,asc",
-            startDateTime: "2023-10-31T17:00:00Z", //TODO: update this to dynamic value
+            startDateTime: todayString,
           }}
         />
         <EventCarousel
@@ -103,7 +109,7 @@ function App() {
             countryCode: "us",
             city: "seattle",
             sort: "date,asc",
-            startDateTime: "2023-11-01T17:00:00Z", //TODO: update this to dynamic value
+            startDateTime: todayString,
           }}
         />
       </Stack>

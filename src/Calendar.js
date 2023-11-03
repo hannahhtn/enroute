@@ -2,7 +2,7 @@
 
 import { Button } from "@mui/material";
 
-const Date = () => {
+const Calendar = () => {
   return (
     <Button variant="contained" color="white" size="small">
       Date{" "}
@@ -10,4 +10,4 @@ const Date = () => {
   );
 };
 
-export default Date;
+export default Calendar;
